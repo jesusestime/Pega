@@ -3,7 +3,7 @@
 
 $j=1;/*creneau*/
 /*$cr=null;/*creneaux*/
-/*$ho=null;/*heure ouverture*//*
+/*$ho=null;/*heure ouverture*/
 $hf=null;
 $table=[];
 echo "Bonjour Nous sommes lundi,configurer-le:\n";
@@ -40,9 +40,7 @@ foreach ($table as $k=>$pegasus){
   echo ("De $pegasus[0] et de $pegasus[1] \n");
 
 }
-*/
 
-/*
 tp2
 
 $user=(int)readline("Veuiller votre disponibilité de visiter sous format entier:");
@@ -59,7 +57,6 @@ foreach($table as $tables){
     }
 }
 
-*/
 
 
 
@@ -88,7 +85,7 @@ foreach($table as $tables){
 
 
 
-/*
+
 tp3
 $i=-1;
 $table=[];
@@ -104,7 +101,7 @@ foreach ($table as $k)
     echo "- $k \n";
 }
 
-*/
+
 
 
 
@@ -114,7 +111,6 @@ foreach ($table as $k)
 
 
 /*tp 3*/
-/*
 $chiffre=[
     'Bio'=>['pegasus','sq','jamily','tresor'],
     'Bio2'=>['gatwe','mukwe','tabazi','kanyana','gaspard']
