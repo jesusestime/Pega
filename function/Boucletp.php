@@ -2,10 +2,12 @@
 <?php
 
 $j=1;/*creneau*/
-/*$cr=null;/*creneaux*/
-/*$ho=null;/*heure ouverture*/
+$cr=null;/*creneaux*/
+$ho=null;/*heure ouverture*/
 $hf=null;
 $table=[];
+$tab=null;
+$newcre=null;
 echo "Bonjour Nous sommes lundi,configurer-le:\n";
 while($newcre != "N"){
         $newcre=readline("Vous voulez entrer un creneau ?repond par:Oui(O) ou Non(N):");
@@ -35,13 +37,13 @@ while($newcre != "N"){
 echo "Le magasin est ouvert:\n";
 foreach ($table as $k=>$pegasus){
   $k++;
-  echo "$k creneau(x)\n" ;
+  echo "le/la  $k creneau(x)\n" ;
   echo("==============\n");
-  echo ("De $pegasus[0] et de $pegasus[1] \n");
+  echo ("De $pegasus[0] heures  et de $pegasus[1] heures \n");
 
-}
+};
 
-tp2
+//tp2
 
 $user=(int)readline("Veuiller votre disponibilité de visiter sous format entier:");
 foreach($table as $tables){
@@ -86,7 +88,7 @@ foreach($table as $tables){
 
 
 
-tp3
+//tp3
 $i=-1;
 $table=[];
 while($nombres!='fin'){
@@ -110,7 +112,7 @@ foreach ($table as $k)
 
 
 
-/*tp 3*/
+
 $chiffre=[
     'Bio'=>['pegasus','sq','jamily','tresor'],
     'Bio2'=>['gatwe','mukwe','tabazi','kanyana','gaspard']
@@ -121,4 +123,4 @@ foreach($chiffre as $notes=>$section){
         echo "- $eleves \n";
     }
     echo "\n\n";
-}*/
+}

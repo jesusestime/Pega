@@ -7,7 +7,7 @@ $umuceri=[
     'Haricot'=>3,
     'Viande'=>4,
     'Legumes'=>2 ];
-    $umunyu=[
+$umunyu=[
         'umunyu'=>2,
         'magi'=>1
     ];
@@ -46,7 +46,7 @@ PEG;
     }
 }
 function plat(){
- $j=[];
+
  foreach($_GET as $l=>$m){
      foreach($m as $o){
         echo <<<LOP
