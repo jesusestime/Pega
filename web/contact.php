@@ -20,6 +20,7 @@
    <h2>Horaire d'ouverture</h2>
  <ul>
    <li>
+     <?=$crene?>
    </li>
  </ul>
   </div>
