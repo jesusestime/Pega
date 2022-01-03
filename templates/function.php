@@ -11,7 +11,16 @@ define("CREN",
     [],
 ]);
 
-
+function select(int $jour,int $crene):string{
+    
+        if($jour==$crene){
+            $attributes=' '.'selected';
+        }
+        else{
+            $attributes='';
+        }
+    return $attributes;
+}
 function htmlcren(array $crene):string{
     if(empty($crene)){
         return 'Fermé';
@@ -23,4 +32,15 @@ function htmlcren(array $crene):string{
     $solution = implode(" et ",$tab);
     return $solution;
 
+}
+function in_creneaux(int $heure,array $crene):bool{
+    foreach($crene as $cr){
+        $start=$cr[0];
+        $finished = $cr[1];
+        if($start<=$heure && $heure <$finished){
+            return true;
+        }
+
+    }
+    return false;
 }
