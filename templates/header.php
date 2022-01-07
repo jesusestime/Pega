@@ -84,6 +84,7 @@ NAV;
         <?=elementnav('/jeux.php','Jeux simple');?>
         <?=elementnav('/menu.php','Menu cuisine');?>
         <?=elementnav('/form.php','Plat some');?>
+        <?=elementnav('/newsletter.php','Newsletter');?>
       </ul>
     </div>
   </div>

@@ -4,11 +4,8 @@ $location_file=file(__DIR__.DIRECTORY_SEPARATOR.'data'.DIRECTORY_SEPARATOR.'menu
 foreach($location_file as $l => $line){
     $location_file[$l]=explode("\t",trim($line));
 }
-
 require 'header.php';
 ?>
-
-
 <div class="container bg-light p-5 rounded">
 <h3>Menu</h3>
 <?php foreach($location_file as $l):?>
