@@ -9,7 +9,7 @@ function reponse($ret='Continuer Oui(o) ou nom (n):'){
          if($rep=='n'){
             $v='n';
             return $v;
-            break;
+            //break;
          }
         
      }

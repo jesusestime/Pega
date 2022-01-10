@@ -85,6 +85,9 @@ NAV;
         <?=elementnav('/menu.php','Menu cuisine');?>
         <?=elementnav('/form.php','Plat some');?>
         <?=elementnav('/newsletter.php','Newsletter');?>
+        <?=elementnav('/profil.php','Profil');?>
+        <?=elementnav('/adulte.php','Adulte Page');?>
+        <?=elementnav('/dashboard.php','Dashboard');?>
       </ul>
     </div>
   </div>
