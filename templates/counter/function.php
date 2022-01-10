@@ -41,7 +41,7 @@ function read_views():string{
     foreach($fichier as $fichiers){
         
         $part=explode('-',basename($fichiers));
-        $visites=[
+        $visites[]=[
             'annee' => $part[1],
             'mois'=> $part[2],
             'jour' => $part [3],
