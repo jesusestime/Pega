@@ -22,11 +22,33 @@ function read_views():string{
 
 //dashboard functions
 
- function views_per_month(int $month,int $year) {
-    $month = str_pad($month,2,'0',STR_PAD_LEFT);
-    $fichier=dirname(__DIR__).DIRECTORY_SEPARATOR.'data'.DIRECTORY_SEPARATOR.'compteur-'.$year.'-'.$month;
-    var_dump($fichier);
-    exit();
+ function vues_mois(int $m,int $a):int{
+    $month = str_pad($m,2,'0',STR_PAD_LEFT);
+    $fichier=dirname(__DIR__).DIRECTORY_SEPARATOR.'data'.DIRECTORY_SEPARATOR.'compteur-'.$a.'-'.$month.'-*';
+    $fichier=(glob($fichier));
+    $total=0;
+    foreach($fichier as $fichiers){
+        $total += file_get_contents($fichiers);
+    }
+    return $total;
+ }
+
+ function vues_details_mois(int $m,int $a) :array{
+    $month = str_pad($m,2,'0',STR_PAD_LEFT);
+    $fichier=dirname(__DIR__).DIRECTORY_SEPARATOR.'data'.DIRECTORY_SEPARATOR.'compteur-'.$a.'-'.$month.'-*';
+    $fichier=(glob($fichier));
+    $visites=[];
+    foreach($fichier as $fichiers){
+        
+        $part=explode('-',basename($fichiers));
+        $visites=[
+            'annee' => $part[1],
+            'mois'=> $part[2],
+            'jour' => $part [3],
+            'vues' => file_get_contents($fichiers)
+        ];
+    }
+    return ($visites);
  }
 
 ?>

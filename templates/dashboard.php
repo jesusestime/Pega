@@ -11,9 +11,11 @@ $month_selected=empty($_GET['mois'])? null : (int)$_GET['mois'];
 
 if($year_selected && $month_selected){
    $total=vues_mois($month_selected,$year_selected);
+   $details=vues_details_mois($month_selected,$year_selected);
 }
 else{
     $total=read_views();
+    $details=[];
 }
 
 
@@ -56,7 +58,8 @@ $month=[
         <?php endfor ?>    
         </div>
     </div>
-    <div class="col-md-8">
+    <div class=" col-md-8">
+        
         <div class="card">
             <div class="card-body">
                 <strong><?=$total?></strong><br>
@@ -64,9 +67,32 @@ $month=[
 
             </div>
         </div>
+        <?php if(!empty($details)) :?>
+        <h2 class="my-3">Tableau détails par mois </h2>
+        <table class="table table-striped">
+                <thead>
+                    <tr>
+                    <th scope="col">N°</th>
+                    <th scope="col">Jour</th>
+                    <th scope="col">Nombre de visite</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <?php foreach($details as $det):?>
+                    <tr>
+                    <th scope="row">1</th>
+                    <td><?=$det["jour"]?></td>
+                    <td><?=$det["vues"]?></td>
+                    <?php endforeach ?>
+                    </tr>
+                    <tr>
+                </tbody>
+        </table>
+        <?php endif ?>
     </div>
 
 </div>
+
 </main>
 <?php 
 require 'footer.php';
