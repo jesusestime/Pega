@@ -1,8 +1,9 @@
-<?php 
+<?php
+require_once 'auth/auth.php';
+redirection_user();
+require_once 'counter/function.php';
+require_once 'header.php';
 $title="Dashboard";
-require 'counter/function.php';
-require 'header.php';
-
 $total=null;
 $year=(int)date('Y');
 $month1=(int)date('m');
@@ -68,7 +69,8 @@ $month=[
             </div>
         </div>
         <?php if(!empty($details)) :?>
-        <h2 class="my-3">Tableau détails par mois </h2>
+    <div class="my-2 container card text-center">
+    <h2 class="my-3">Tableau détails par mois </h2>
         <table class="table table-striped">
                 <thead>
                     <tr>
@@ -78,9 +80,10 @@ $month=[
                     </tr>
                 </thead>
                 <tbody>
+                    <?php $i=1;?>
                   <?php foreach($details as $det):?>
                     <tr>
-                    <th scope="row">1</th>
+                    <th scope="row"><?=$i++?></th>
                     <td><?=$det["jour"]?></td>
                     <td><?=$det["vues"]?></td>
                     <?php endforeach ?>
@@ -88,6 +91,8 @@ $month=[
                     <tr>
                 </tbody>
         </table>
+    </div>
+        
         <?php endif ?>
     </div>
 

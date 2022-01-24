@@ -1,6 +1,9 @@
 <?php
 
-
+if(session_status()===PHP_SESSION_NONE){
+  session_start();
+}
+require_once 'auth/auth.php';
 function elementnav(string $link,string $title):string{
     $pega = null;
     if($_SERVER['SCRIPT_NAME'] == $link){$pega='active';}
@@ -90,5 +93,10 @@ NAV;
         <?=elementnav('/dashboard.php','Dashboard');?>
       </ul>
     </div>
+    <ul class="navbar-nav">
+      <?php if(est_connecte()):?>
+      <li class="" class="nav-brand"><a href="/logout.php" class="nav-link">Se deconnecter</a></li>
+      <?php endif ?>
+    </ul>
   </div>
 </nav>
