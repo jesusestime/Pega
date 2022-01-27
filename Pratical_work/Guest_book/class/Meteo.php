@@ -4,7 +4,13 @@ class Meteo {
 
     public function __construct(string $apikey){
         $this->apikey=$apikey;
-    }
+    }    
+    /**
+     * function to get forecast daily
+     *
+     * @param  string $city 
+     * @return array
+     */
     public function gettodayforecast(string $city):array{
         
         $dat=$this->callAPI("weather/?q={$city}");
@@ -15,7 +21,13 @@ class Meteo {
                 'date'=> new DateTime()
             ];
     
-    }
+    }    
+    /**
+     * function  to get forecast 5 days
+     *
+     * @param  string $city ville(Bujumbura,bi)
+     * @return array
+     */
     public function getforecast(string $city):array{
         
             $dat=$this->callAPI("forecast/?q={$city}");
@@ -29,7 +41,13 @@ class Meteo {
             }
             return $res;
         
-    }
+    }    
+    /**
+     * callAPI  with $parm
+     *
+     * @param  string $param linkApi(e.g : daily/forecast)
+     * @return array
+     */
     private function callAPI(string $param ):?array{
         $curl=curl_init("https://api.openweathermap.org/data/2.5/{$param},bi&appid={$this->apikey}&units=metric&lang=fr");
         curl_setopt_array($curl,[
@@ -46,8 +64,6 @@ class Meteo {
             $data=json_decode($data,true);
             return $data;
     }
-
-
     }
 
 ?>

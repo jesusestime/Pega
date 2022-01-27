@@ -14,7 +14,7 @@ require 'elements/header.php';?>
         <li>
             <?php $today['date']->setTimezone(new DateTimeZone('Africa/Bujumbura'));?>
             En ce moment,le
-            <?= $today['date']->format('d/M/Y à à H:i')?> ,<?=$today['description']?>, <?=$today['temp']?>
+            <?= $today['date']->format('d/M/Y à à H:i')?> ,<?=$today['description']?>, <?=$today['temp']?> °C 
         </li>
     <br>
     </ul>
@@ -23,7 +23,7 @@ require 'elements/header.php';?>
     <ul>
         <?php foreach($resulat as $rs):?>
             <?php $rs['date']->setTimezone(new DateTimeZone('Africa/Bujumbura'));?>
-            <li><?= $rs['date']->format('d/M/Y à à H:i')?> ,<?=$rs['description']?>, <?=$rs['temp']?></li>
+            <li><?= $rs['date']->format('d/M/Y à à H:i')?> ,<?=$rs['description']?>, <?=$rs['temp']?> °C </li>
             <br>
         <?php endforeach ?>
     </ul>
