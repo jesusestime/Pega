@@ -1,4 +1,6 @@
 <?php 
+namespace Pegasus\Meteo;
+use \DateTime;
 class Meteo {
     private $apikey;
 

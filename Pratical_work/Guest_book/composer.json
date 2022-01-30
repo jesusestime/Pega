@@ -1,0 +1,15 @@
+{
+    "name": "pegasus/guestbook",
+    "authors": [
+        {
+            "name": "Pegasus03",
+            "email": "estimejesus@gmail.com"
+        }
+    ],
+    "autoload":{
+        "psr-4" :{
+            "Pegasus\\":"class/"
+        }
+    },
+    "require": {}
+}

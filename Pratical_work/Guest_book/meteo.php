@@ -1,6 +1,11 @@
 <?php
+namespace Pegasus;
+require 'vendor/autoload.php';
+
+use DateTimeZone;
+use \Pegasus\Meteo\Meteo;
+
 $title='meteo';
-require_once 'class/Meteo.php';
 $meteo=new Meteo('63eefdf103155908c74d3504c541ed9f');
 $resulat=$meteo->getforecast('Bujumbura,bi');
 $today=$meteo->gettodayforecast('Bujumbura,bi');

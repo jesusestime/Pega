@@ -1,16 +1,19 @@
-<?php 
-phpinfo();
-die();
+<?php
+
+namespace Pegasus;
+
+use Pegasus\Guestbook\Message;
+use Pegasus\Guestbook\Guestbook;
+require "vendor/autoload.php";
+
 $title = "Booking";
-require_once 'class/Message.php';
-require_once 'class/Guestbook.php';
 
 $error=null;
 $success=false;
 $Guestbook=new Guestbook(__DIR__.DIRECTORY_SEPARATOR.'data'.DIRECTORY_SEPARATOR.'messages');
 if(isset($_POST['message'],$_POST['username'])){
   $message=new Message($_POST['username'],$_POST['message']);
-  if($message->isvalid()){
+  if($message-> isvalid()){
     $Guestbook->addmessage($message);
     $success=true;
     $_POST=[];
