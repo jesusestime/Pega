@@ -1,6 +1,6 @@
 <?php
-require_once 'Message.php';
-
+namespace Pegasus\Guestbook;
+use DateTime;
 
 class Guestbook
 {
@@ -30,7 +30,7 @@ class Guestbook
         $msg=[];
         foreach ($line as $l){
             $data=json_decode($l,true);
-            $msg[]=new Message($data['username'],$data['message'],new DateTime("@".$data['date']));   
+            $msg[]=new Message($data['username'],$data['message'],new DateTime("@".$data['date'])) ;
         }
         return array_reverse($msg);
 

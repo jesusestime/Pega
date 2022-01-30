@@ -1,14 +1,17 @@
 <?php 
-require 'elements/header.php';
-require_once 'class/Post.php';
-$pdo=new PDO('sqlite:data.db',null,null,[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+namespace App;
+require 'vendor/autoload.php';
+use PDO;
+use PDOException;
+
+$pdo=new PDO('sqlite:App/database/data.db',null,null,[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ]);
 $error=null;
 $success=null;
 try{
     //ajouter un article
     if(isset($_POST['name'],$_POST['content'])){
-        $query=$pdo->prepare('insert into posts(name,content,date) values (:name,:content,:date)');
+        $query=$pdo->prepare('insert into posts (name,content,date) values (:name,:content,:date)');
         $query->execute(
             [
                 'name'=>$_POST['name'],

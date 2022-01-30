@@ -1,4 +1,6 @@
 <?php
+namespace App\Post;
+
 class Post{
     public $id;
     public $name;

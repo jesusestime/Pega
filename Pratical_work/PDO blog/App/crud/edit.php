@@ -1,6 +1,10 @@
 <?php 
-require 'elements/header.php';
-$pdo=new PDO('sqlite:data.db',null,null,[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+namespace App\crud;
+
+use PDO;
+use PDOException;
+
+$pdo=new PDO('sqlite:../database/data.db',null,null,[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ]);
 $error=null;
 $success=null;
